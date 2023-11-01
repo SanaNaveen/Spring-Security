@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spring Security</title>
+    <base href="/">
+    <link type="text/css" media="all"  th:href="@{/static/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <form action="#" method="post" th:action="@{/authenticateTheUser}" class="form-signin">
+        <h2>Login Page</h2>
+        <input type="text" name="username" placeholder="Enter your username" class="form-control">
+        <input type="password" name="password" placeholder="Enter your password" class="form-control">
+        <div>
+            <div th:if="${param.error}">
+                <p>Invalid Username and Password</p>
+            </div>
+        </div>
+        <input type="submit" value="Login" class="btn btn-primary">
+
+    </form>
+</body>
+</html>

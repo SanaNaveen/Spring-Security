@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+body {
+  background: #F0F0F0;
+  font-family: Raleway, sans-serif;
+  color: #666;
+}
+
+.form-signin{
+    margin: 100px auto;
+    padding: 40px 50px;
+    max-width: 300px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 1px 1px 1px #666;
+}
+
+.form-signin input{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 12px 12px;
+    font-size: 16px;
+    border-radius: 2px;
+    font-family: Raleway, sans-serif;
+}
+
+.form-signin input[type=text]
+.form-signin input[type=password]{
+    border: 1px solid #c0c0c0;
+    transition: .2s;
+}
+
+.form-signin input[type=text]:hover{
+    border-color: #213555;
+    outline: none;
+    transition: all .2s easy-in-out;
+}
+
+.form-signin input[type=submit] {
+  border: none;
+  background: #4F709C;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+  margin: 20px 0px;
+}
+
+.form-signin input[type=submit]:hover {
+  background: #213555;
+}
+
+.form-signin h2 {
+    margin: 20px 0 0;
+    color: #4F709C;
+    font-size: 28px;
+}
+
+.form-signin p {
+    color: #D71313;
+    font-family: Raleway, sans-serif;
+}
+
+
