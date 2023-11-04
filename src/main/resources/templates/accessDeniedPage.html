@@ -6,25 +6,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Success Page</title>
+    <title>Leaders Page</title>
     <link type="text/css" media="all"  th:href="@{/static/css/style.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <div class="col-md-12">
     <div class="col-md-6">
-        <div class="row" sec:authorize="hasRole('MANAGER')">
-            <a th:href="@{/leaders}">Leadership Meeting</a>
-            <p> (Only for Manager peeps)</p>
+        <h1>Access Denied - You're not authorized to access this page.</h1>
 
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <a th:href="@{/}">Back to home</a>
         </div>
-        <div class="row" sec:authorize="hasRole('ADMIN')">
-            <a th:href="@{/admin}">Admin Meeting</a>
-            <p> (Only for Admin peeps)</p>
-        </div>
-        <form action="#" method="post" th:action="@{/logout}">
-            <input type="submit" value="Logout" class="btn btn-danger">
-        </form>
     </div>
 
 </div>

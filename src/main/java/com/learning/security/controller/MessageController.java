@@ -20,4 +20,18 @@ public class MessageController {
         return "successPage.html";
     }
 
+    @GetMapping("/leaders")
+    public String leadersPage(Authentication authentication) {
+        return "leadersPage.html";
+    }
+
+    @GetMapping("/admin")
+    public String adminPage(Authentication authentication) {
+        return "adminPage.html";
+    }
+
+    @GetMapping("/accessDenied")
+    public String accessDenied(Authentication authentication) {
+        return "accessDeniedPage.html";
+    }
 }

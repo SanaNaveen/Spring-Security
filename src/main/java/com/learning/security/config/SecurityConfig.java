@@ -27,7 +27,12 @@ public class SecurityConfig {
 
         httpSecurity.authorizeHttpRequests(requests ->
                         requests.requestMatchers(permitted).permitAll()
+                                .requestMatchers("/leaders/**").hasRole("MANAGER")
+                                .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated())
+                .exceptionHandling(configurer -> {
+                    configurer.accessDeniedPage("/accessDenied");
+                })
                 .formLogin(form ->
                         form.loginPage("/customLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")
@@ -41,7 +46,14 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(){
         UserDetails userDetails = User.withDefaultPasswordEncoder()
                 .username("naveen").password("123").roles("USER").build();
-        return new InMemoryUserDetailsManager(userDetails);
+
+        UserDetails userDetails1 = User.withDefaultPasswordEncoder()
+                .username("santhosh").password("123").roles("USER","ADMIN").build();
+
+        UserDetails userDetails2 = User.withDefaultPasswordEncoder()
+                .username("dinesh").password("123").roles("USER","MANAGER").build();
+
+        return new InMemoryUserDetailsManager(userDetails,userDetails1,userDetails2);
     }
 
 
